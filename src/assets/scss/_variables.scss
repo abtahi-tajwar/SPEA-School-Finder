@@ -1,0 +1,79 @@
+// Typography
+$font-inter: 'Inter', sans-serif;
+$font-poppins: 'Poppins', sans-serif;
+$font-base: 1rem;
+$font-lg: 20px;
+$font-md: 0.875rem;
+$font-sm: 13px;
+$line-height-base: 1.8;
+$fw-bold: 600;
+$null: 0;
+$full: 100%;
+$radius: 0.25rem;
+$circle: 50%;
+
+// Colors
+$primaryColor: #324597;
+$secondaryColor: #C18D30;
+$secondary-200: #E2B53E;
+$secondary-100: #F8D523;
+$red: #E92C2C;
+$darkRed: #CF364C;
+$orange: #f6993f;
+$yellow: #fbc20b;
+$green: #00BA34;
+$grey-100: #E8E8E8;
+$grey-200: #D2D4D1;
+$grey-300: #DDE2E4;
+$grey-400: #585757;
+$grey-500: #D0D0D0;
+$grey-600: #E5E7EB;
+$grey-700: #808080;
+$grey-800: #625e5e;
+$light:#f7f7f7;
+$ice:#EFEFEF;
+$white: #ffffff;
+$info: #3CB4E5;
+$cyan: #6cb2eb;
+$purple: #7683BA;
+$dark: #151414;
+$placeholder: #969696;
+
+
+
+$theme-colors: (
+    "success":        $green,
+    "warning":        $orange,
+    "danger":         $red,
+    "dark-red":       $darkRed,
+    'placeholder':    $placeholder,
+    "dark":           $dark,
+    "primary":        $primaryColor,
+    "purple":         $purple,
+    "secondary":      $secondaryColor,
+    "secondary-200":  $secondary-200,
+    "secondary-100":  $secondary-100,
+    "white":          $white,
+    "grey-800":       $grey-800,
+    "grey-300":       $grey-300,
+    "grey-400":       $grey-400,
+    "grey-500":       $grey-500,
+    "grey-200":       $grey-200,
+    "grey-100":       $grey-100,
+    "grey-600":       $grey-600,
+    "grey-700":       $grey-700,
+    "light":          $light,
+    "ice":          $ice,
+    "info":           $info,
+    "yellow":         $yellow,
+);
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+    xxxl: 1700px,
+);

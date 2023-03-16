@@ -1,0 +1,100 @@
+.main {
+  &-content {
+    padding-left: 300px;
+    width: 100%;
+    @include media-breakpoint-down(lg) {
+      padding-left: 0 !important;
+    }
+  }
+}
+.main-card-search-results {
+  @include media-breakpoint-down(sm) {
+    .text-base {
+      font-size: 14px !important;
+    }
+    .text-sm {
+      font-size: 11px !important;
+    }
+    .text-md {
+      font-size: 12px !important;
+    }
+  }
+
+}
+
+.card-investors {
+  &-wrapper {
+    right: 1rem;
+    bottom: 1rem;
+    width: 228px;
+  }
+
+  &-insights {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+
+    &-icon {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+.main-school-slider .swiper-button-next:after,
+.main-school-slider .swiper-button-prev:after{
+  color: #969696;
+  font-size: 20px !important;
+}
+
+@include media-breakpoint-down(md) {
+  .main-school-slider .swiper-button-next{
+    right: 0 !important;
+  }
+  .main-school-slider .swiper-button-prev{
+    left: 0 !important;
+  }
+}
+.main-school-slider:after{
+  position: absolute;
+  content: '';
+  z-index: 9;
+  width: 15%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background: linear-gradient(270deg, #FFFFFF 11.72%, rgba(255, 255, 255, 0) 105%, rgba(255, 255, 255, 0.68) 105%);
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
+.main-school-tabs{
+  .nav-link{
+    color: $dark;
+    border: 0 !important;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 0.5rem 0.3rem;
+    border-bottom: 2px solid transparent !important;
+    @include media-breakpoint-down(sm) {
+      font-size: 12px !important;
+      padding: 0.5rem 0.2rem !important;
+    }
+    &.active{
+      color: $primaryColor !important;
+      border-bottom: 2px solid $info !important;
+    }
+    &:focus,
+    &:hover{
+      border-width:  0 0 2px 0 !important;
+      box-shadow: none;
+      outline: 0 !important;
+    }
+  }
+}
+.offcanvas-forecasts{
+  z-index: 99999;
+  width: 100% !important;
+  max-width: 100% !important;
+
+}

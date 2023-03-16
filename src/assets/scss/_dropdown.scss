@@ -1,0 +1,27 @@
+.dropdown{
+    .dropdown-menu{
+        border-radius: 0.2rem !important;
+        border: 1px solid $grey-100 !important;
+        box-shadow: 5px 7px 60px 0 rgba($dark, 0.08) !important;
+        .dropdown-item{
+            white-space: normal;
+            padding: 0.4rem 1rem;
+            color:$dark;
+            &:hover,
+            &:active,
+            &:focus{
+                color:$dark !important;
+                background: $light !important;
+            }
+        }
+    }
+    &-profile{
+        .dropdown-menu{
+            width: 260px;
+        }
+    }
+}
+
+.arrow-none:after {
+    display: none !important;
+}

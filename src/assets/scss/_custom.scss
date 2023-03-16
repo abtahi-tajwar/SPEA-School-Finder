@@ -1,0 +1,99 @@
+:root {
+    --bs-tooltip-bg: $primaryColor;
+    --bs-tooltip-color: $dark;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+html {
+    @include basic-styles;
+    @include no-gutters;
+    scroll-behavior: smooth;
+}
+
+body {
+    @include basic-styles;
+    @include no-gutters;
+    -webkit-font-smoothing: antialiased;
+    background: $white;
+    height: 100%;
+    width: 100%;
+}
+
+a {
+    color: $dark;
+    transition: .3s all;
+    text-decoration: none;
+}
+
+
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+}
+
+::-moz-selection {
+    background: $primaryColor !important;
+    color: #ffffff !important;
+}
+
+::selection {
+    background: $primaryColor !important;
+    color: #ffffff !important;
+}
+
+::placeholder {
+    color: $placeholder !important;
+}
+
+
+/*CHANGES IN BOOTSTRAP*/
+.bs-tooltip-top .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
+    border-top-color: var(--bs-tooltip-bg, #000);
+}
+
+.bs-tooltip-end .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
+    border-right-color: var(--bs-tooltip-bg, #000);
+}
+
+.bs-tooltip-bottom .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before {
+    border-bottom-color: var(--bs-tooltip-bg, #000);
+}
+
+.bs-tooltip-start .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before {
+    border-left-color: var(--bs-tooltip-bg, #000);
+}
+
+.tooltip-inner {
+    color: #fff !important;
+    background-color: var(--bs-tooltip-bg, #000);
+}
+
+
+.custom-scroll::-webkit-scrollbar {
+    width: 4px;
+    border-radius: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+    background: #f7f7f7;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+    background: #e7e7ea;
+}
+
+
+.main-wrapper{
+    width: 100%;
+    overflow: hidden;
+}

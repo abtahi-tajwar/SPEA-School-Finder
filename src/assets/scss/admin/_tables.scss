@@ -1,0 +1,153 @@
+/**********Table CSS*****/
+.custom-table {
+    &.table-shadow{
+        box-shadow: 0 0.15rem 1.75rem 0 rgb(58 59 69 / 10%);
+    }
+    &.table,
+    &.dataTable{
+        width: 100% !important;
+        background: white;
+        border-radius: 0.25rem;
+        border-collapse: collapse;
+        margin-bottom: 20px !important;
+    }
+    th {
+        border: 0 !important;
+        color: #6E7C87 !important;
+        padding: 0.9rem;
+        font-size: 0.875rem !important;
+        background: #F9FAFB;
+        font-weight: 500 !important;
+        outline: 0;
+        box-shadow: none;
+        border-top: 1px solid #E5E9EB !important;
+        border-bottom: 1px solid #E5E9EB !important;
+        vertical-align: middle !important;
+        &:first-child {
+            padding: 0.9rem 0.9rem 0.9rem 1.2rem !important;
+            border-radius: 0 !important;
+        }
+    }
+    thead {
+        tr {
+            margin-bottom: 1rem;
+            border: 0 !important;
+        }
+    }
+    td {
+        background: $white;
+        padding: 0.7rem 0.9rem;
+        font-size: $font-md;
+        border: 0 !important;
+        color: $dark;
+        border-bottom: 1px solid #E5E9EB !important;
+        vertical-align: middle;
+        &:first-child {
+            padding:0.7rem 0.9rem 0.7rem 1.2rem !important;
+        }
+    }
+}
+
+.custom-table-select{
+    color: $dark;
+    height: 32px;
+    border-radius: 0.25rem;
+    font-size: $font-md;
+    background: $white !important;
+    overflow: hidden;
+    border: 1px solid #DDE2E4 !important;
+    padding: 0 1rem;
+    &:focus,
+    &:active {
+        outline: 0 !important;
+        border: 1px solid #DDE2E4 !important;
+        box-shadow:none !important;
+    }
+}
+
+.custom-table-search {
+    &-input{
+        min-width: 200px;
+        @include media-breakpoint-down(md) {
+            min-width: auto !important;
+        }
+        padding: 0 1rem 0 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start !important;
+        color: $dark;
+        height: 32px;
+        border-radius: 0.25rem;
+        font-size: $font-md;
+        background: $white !important;
+        overflow: hidden;
+        border: 1px solid #DDE2E4 !important;
+        &:focus,
+        &:active {
+            outline: 0 !important;
+            border: 1px solid #DDE2E4 !important;
+            box-shadow:none !important;
+        }
+
+    }
+
+    i {
+        z-index: 2;
+        top: 8px;
+        font-size: $font-base;
+        left: 10px;
+        color: #B0BABF;
+    }
+}
+
+
+
+
+.custom-table td.p-0 {
+    padding: 0 !important;
+}
+
+
+.table-pagination{
+    .page-item{
+        .page-link{
+            color: $dark;
+            height: 26px;
+            border: 0 !important;
+            line-height: 26px;
+            font-size: 13px;
+            border-radius: 4px;
+            min-width: 26px;
+            padding: 0 0.4rem;
+            text-align: center;
+            i{
+                line-height: 26px;
+                font-size: 18px;
+                color: $dark;
+            }
+            &:focus{
+                border: 0 !important;
+                box-shadow: none !important;
+                outline: 0 !important;
+            }
+            &:hover{
+                background: #E5E9EB !important;
+            }
+        }
+
+        &.active{
+            .page-link{
+                border: 0 !important;
+                background: #E5E9EB !important;
+                color: $dark !important;
+                &:hover{
+                    border: 0 !important;
+                    background: #E5E9EB !important;
+                    box-shadow: none !important;
+                    outline: 0 !important;
+                }
+            }
+
+        }
+    }
+}

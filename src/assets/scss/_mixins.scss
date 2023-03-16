@@ -1,0 +1,80 @@
+//mixins
+@mixin no-gutters {
+    margin: $null;
+    padding: $null;
+}
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin basic-styles {
+    font-family: $font-inter;
+    line-height: $line-height-base;
+    font-size: $font-base;
+    font-weight: normal;
+    color: $dark;
+}
+
+@mixin full-area {
+    height: $full;
+    width: $full;
+    min-height: 100vh;
+}
+
+@mixin no-focus {
+    outline: $null;
+    box-shadow: none;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-box {
+    display: flex;
+    align-items: center;
+    -webkit-box-align: center;
+    flex-direction: column;
+    flex-shrink: 0;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+@mixin custom-input {
+    position: relative;
+    display: block;
+    width: $full;
+    height: 40px;
+    padding: 0rem 1rem;
+    line-height: 40px;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: $dark;
+    background-color: $white;
+    background-clip: padding-box;
+    border: 1px solid $grey-300 !important;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+@mixin custom-input-sm {
+    position: relative;
+    display: block;
+    width: $full;
+    height: 40px;
+    min-height: 40px;
+    padding: 0rem 1rem;
+    line-height: 40px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: $grey-800;
+    background-color: $white;
+    background-clip: padding-box;
+    border: 1px solid #E8E8E8 !important;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}

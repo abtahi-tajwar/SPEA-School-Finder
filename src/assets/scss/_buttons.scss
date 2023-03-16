@@ -1,0 +1,157 @@
+.btn {
+    position: relative;
+    display: inline-block;
+    transition: all .2s;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 0 2.5rem;
+    height: 40px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 39px !important;
+    @include media-breakpoint-down(md) {
+        font-size: $font-md !important;
+        padding: 0 2rem !important;
+    }
+}
+
+a,
+button,
+.btn{
+    &:active,
+    &:focus {
+        outline: 0 !important;
+    }
+}
+
+.btn-primary {
+    color: $white;
+    background-color: $primaryColor;
+    border-radius: 8px;
+    &:active,
+    &:hover,
+    &:focus {
+        color: $white !important;
+        outline: 0 !important;
+        box-shadow: rgba($primaryColor, 0.12) 0px 10px 20px 0px !important;
+    }
+}
+.btn-outline-primary{
+    &:active,
+    &:hover,
+    &:focus {
+        i{
+            color:white !important;
+        }
+        color: $white !important;
+        outline: 0 !important;
+        box-shadow: rgba($primaryColor, 0.12) 0px 10px 20px 0px !important;
+    }
+}
+
+.btn-secondary {
+    color: $white;
+    border-radius: 10px;
+    background-color: $secondaryColor;
+
+    &:hover,
+    &:focus {
+        color: $white !important;
+        box-shadow: rgba($primaryColor, 0.12) 0px 10px 20px 0px;
+    }
+}
+
+.btn-white {
+    color: $dark;
+    background-color: $white;
+    border-radius: 10px;
+    border: 1px solid #AAAAAA!important;
+
+    &:hover,
+    &:focus {
+        color: $dark !important;
+        box-shadow: rgba($grey-800, 0.12) 0px 10px 20px 0px;
+    }
+}
+
+.btn-danger {
+    color: $white;
+    background-color: $darkRed;
+    border-radius: 10px;
+
+    &:hover,
+    &:focus {
+        color: $white !important;
+        box-shadow: rgba($grey-800, 0.12) 0px 10px 20px 0px;
+    }
+}
+
+.btn-outline-info{
+    border-radius: 10px;
+    &:hover,
+    &:focus {
+        color:white !important;
+        i{
+            color:white !important;
+        }
+        outline: 0 !important;
+        box-shadow: rgba($info, 0.12) 0px 10px 20px 0px !important;
+    }
+}
+
+.btn-secondary-outline {
+    color: $secondaryColor;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid $secondaryColor;
+
+    &:hover,
+    &:focus {
+        color: $secondaryColor;
+        background-color: transparent;
+        border: 1px solid $secondaryColor;
+        box-shadow: rgba($grey-800, 0.12) 0px 10px 20px 0px;
+    }
+}
+
+.btn-danger-outline {
+    color: $darkRed;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid $darkRed;
+
+    &:hover,
+    &:focus {
+        color: $darkRed;
+        background-color: transparent;
+        border: 1px solid $darkRed;
+        box-shadow: rgba($grey-800, 0.12) 0px 10px 20px 0px;
+    }
+}
+.icon-60{
+    min-width: 60px;
+    width: 60px;
+    height: 60px;
+}
+.icon-40{
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+
+}
+
+.icon-30{
+    min-width: 30px;
+    width: 30px;
+    height: 30px;
+}
+.icon-60,
+.icon-30,
+.icon-40
+{
+    img{
+        width: $full;
+        height: $full;
+        object-fit: cover;
+    }
+}

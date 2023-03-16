@@ -1,0 +1,20 @@
+@import '_variables';
+@import "~bootstrap/scss/bootstrap";
+@import "~material-design-icons-iconfont/dist/material-design-icons.min.css";
+
+// others
+@import '_fonts';
+@import '_typography';
+@import '_mixins';
+@import "_forms";
+@import "_buttons";
+@import "_dropdown";
+@import "_header";
+@import "_custom";
+@import "_sidebar";
+@import "_dashboard";
+@import "admin/_sidebar";
+@import "admin/_navbar";
+@import "admin/_dashboard";
+@import "admin/_tables";
+@import "admin/_tabs";

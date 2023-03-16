@@ -1,0 +1,211 @@
+.btn:focus,
+button:focus,
+input:focus,
+select,
+textarea,
+.form-control,
+.btn.focus {
+  outline: 0px;
+  box-shadow: none;
+}
+
+.custom-textarea,
+.custom-input {
+  @include custom-input;
+  transition: all .2s ease-in-out;
+  @include media-breakpoint-down(md) {
+    font-size: 0.8rem !important;
+  }
+
+  &:active,
+  &:focus {
+    border-color: $secondaryColor !important;
+  }
+}
+
+.custom-input-sm {
+  @include custom-input-sm;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border: 1px solid #E8E8E8 !important;
+  }
+}
+.custom-dropdown{
+  .dropdown-toggle::after {
+    position: absolute;
+    top: 1.05rem;
+    right: 0.9rem;
+  }
+  .dropdown-menu{
+    width: 280px;
+  }
+}
+.dropdown-scroll{
+  max-height: 300px;
+  overflow-y: auto;
+}
+.custom-textarea {
+  height: auto !important;
+}
+
+.custom-input-group {
+  .custom-input-sm,
+  .custom-input {
+    padding-left: 2.6rem;
+  }
+
+  i {
+    top: 11px;
+    left: 0.9rem;
+    color: $placeholder;
+  }
+}
+
+input[type=checkbox] {
+  border-radius: $null !important;
+}
+.form-check{
+  input[type=checkbox]{
+    border-radius: 4px !important;
+    margin-top: 0.41em;
+  }
+}
+.form-switch{
+  input[type=checkbox]{
+    border-radius: 12px !important;
+    margin-top: 7.5px !important;
+  }
+}
+.form-check-input {
+  border: 1px solid $grey-100;
+
+  &:checked {
+    background-color: $primaryColor;
+    border-color: $primaryColor;
+  }
+
+  &:active,
+  &:focus {
+    border-color: $primaryColor !important;
+    box-shadow: 0 0 0 0.25rem rgba($primaryColor, 0.2) !important;
+  }
+}
+.form-check-secondary{
+  .form-check-input{
+    width: 1.2em;
+    margin-top: 5px !important;
+    height: 1.2em;
+    &:checked {
+      background-color: $secondaryColor;
+      border-color: $secondaryColor;
+    }
+
+    &:active,
+    &:focus {
+      border-color: $secondaryColor !important;
+      box-shadow: 0 0 0 0.25rem rgba($secondaryColor, 0.2) !important;
+    }
+  }
+  .form-check-label{
+    padding-left: 0.4rem;
+  }
+}
+
+.card-custom {
+  .card-header,
+  .card-body {
+    padding: 1.5rem 1.5rem;
+    @include media-breakpoint-down(md) {
+      padding: 1.5rem 1rem;
+    }
+  }
+  .custom-header{
+    top: -14px;
+    padding: 0 8px;
+    left: 1rem;
+  }
+}
+
+.icon-84{
+  min-width: 84px;
+  width: 84px;
+  height: 84px;
+  @include media-breakpoint-down(sm) {
+    min-width: 60px;
+    width: 60px;
+    height: 60px;
+  }
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.icon-42{
+  min-width: 42px;
+  width: 42px;
+  height: 42px;
+  @include media-breakpoint-down(sm) {
+    min-width: 36px;
+    width: 36px;
+    height: 36px;
+  }
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.main-card-hover{
+  transition: all .15s ease-in-out;
+  &:hover{
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1), 0px 1px 18px rgba(0, 0, 0, 0.06), 0px 6px 10px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.card-shadow{
+  box-shadow: 0px 0px 1px rgba(26, 32, 36, 0.32), 0px 4px 8px rgba(91, 104, 113, 0.24) !important;
+}
+.custom-uploader{
+  height: 145px;
+  border-radius: 10px;
+  border: 1px dashed $grey-500;
+}
+.custom-uploader-img{
+  height: 145px;
+  width: auto;
+  border-radius: 10px;
+  background-color: #3D3D3D;
+  img{
+    width: auto;
+    height: 145px;
+    object-fit: contain;
+  }
+}
+
+.badge{
+  text-transform: uppercase;
+  line-height: 2.2;
+  &-danger{
+    background: #FFEFEB;
+    color:$darkRed
+  }
+  &-secondary{
+    background: #FFFCC2;
+    color: $secondaryColor;
+  }
+  &-success{
+    background: #EBFFF1;
+    color: #119C2B;
+  }
+  &-info{
+    background: #E3F8FF;
+    color: #00719A;
+  }
+  &-dark{
+    background: #EEF0F2;
+    color: #252C32;
+  }
+}

@@ -1,0 +1,22 @@
+.main-admin{
+  &-wrapper{
+    font-family: 'Open Sans', sans-serif;
+    background: #EFEFEF;
+  }
+  &-content{
+    font-family: 'Open Sans', sans-serif;
+    padding-left: 320px;
+    background: #EFEFEF;
+    width: 100%;
+    @include media-breakpoint-down(lg) {
+      padding-left: 0 !important;
+    }
+    &-inner{
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+      @include media-breakpoint-down(lg) {
+        padding: 1.5rem 1rem !important;
+      }
+    }
+  }
+}

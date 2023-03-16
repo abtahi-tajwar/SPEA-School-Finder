@@ -1,0 +1,29 @@
+.main-navbar{
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    height: 80px;
+    padding-left: 300px;
+    z-index: 991;
+    box-shadow: 0 0 50px rgb(226 222 232 / 50%);
+    @include media-breakpoint-down(lg) {
+        padding-left: 0 !important;
+    }
+    .navbar-brand{
+        margin: 0.2rem 0;
+        font-size: 1.7rem;
+        img{
+            width: 140px;
+            @include media-breakpoint-down(lg) {
+                width: 140px;
+            }
+        }
+    }
+}
+.navbar-toggler{
+    &:focus{
+        box-shadow: none !important;
+        outline: 0 !important;
+    }
+}

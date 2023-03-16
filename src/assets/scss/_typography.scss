@@ -1,0 +1,71 @@
+h2{
+    font-size: 3rem;
+    @include media-breakpoint-down(xl) {
+        font-size: 2.5rem !important;
+    }
+}
+
+h3{
+    font-size: 2.5rem;
+    @include media-breakpoint-down(xl) {
+        font-size: 2rem !important;
+    }
+}
+h4{
+    font-size: 1.9rem;
+    @include media-breakpoint-down(xl) {
+        font-size: 1.5rem !important;
+    }
+}
+h5{
+    font-size: 1.5rem;
+    @include media-breakpoint-down(xl) {
+        font-size: 1.2rem !important;
+    }
+}
+h6{
+    font-size: 1.2rem;
+    @include media-breakpoint-down(xl) {
+        font-size: 1rem !important;
+    }
+}
+.f-poppins{
+    font-family: $font-poppins !important;
+}
+
+.text-lg{
+    font-size: $font-lg !important;
+    @include media-breakpoint-down(sm) {
+        font-size: 1rem !important;
+    }
+}
+.text-base{
+    font-size: $font-base !important;
+}
+.text-md{
+    font-size: $font-md !important;
+    @include media-breakpoint-down(sm) {
+        font-size: 0.78rem !important;
+    }
+}
+.text-sm{
+    font-size: $font-sm !important;
+    @include media-breakpoint-down(sm) {
+        font-size: 0.7rem !important;
+    }
+}
+.text-12{
+    font-size: 12px !important;
+}
+.text-xs{
+    font-size: 0.5rem !important;
+}
+.text-mini{
+    font-size: 10px !important;
+}
+.cursor-pointer{
+    cursor: pointer !important;
+}
+.fw-medium{
+    font-weight: 500 !important;
+}
