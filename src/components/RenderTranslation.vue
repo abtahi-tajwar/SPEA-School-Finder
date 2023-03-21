@@ -21,12 +21,12 @@
         methods: {
             renderTranslation,
             translate() {
-                if (this.$el) {
-                    if (this.numeric ) {
-                        return renderTranslation(this.$el.innerHTML.trim(), this.$store.state.isTranslated)
-                    }
-                    return translations[this.$el.innerHTML.trim().toLowerCase()] ?? this.$el.innerHTML
+                const content = this.$slots.default()[0].children.trim()
+                if (this.numeric ) {
+                    return renderTranslation(content, this.$store.state.isTranslated)
                 }
+                return translations[content.toLowerCase()] ?? content
+                
             }
         }
     }
