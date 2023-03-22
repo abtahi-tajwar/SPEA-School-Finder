@@ -194,9 +194,9 @@
               aria-expanded="false"
               @click="closeSchoolDetails()"
             >
-              <span v-if="specialNeedValues.length == 0"
-                >Special Educational Needs</span
-              >
+              <span v-if="specialNeedValues.length == 0">
+                <render-translation>Special Educational Needs</render-translation>
+              </span>
               <span v-else>{{ needsText }}</span>
             </button>
             <ul class="dropdown-menu dropdown-scroll custom-scroll">
@@ -210,7 +210,11 @@
                       v-model="specialNeedValues"
                     />
                     <label class="form-check-label text-sm">
-                      {{ education.name }}
+                      <render-dynamic-translation
+                          :english="education.name"
+                          :arabic="education.name_ar"
+                      />
+                      <!-- {{ education.name }} -->
                     </label>
                     <p class="text-mini text-grey-400 m-0">
                       {{ education.description }}
@@ -221,7 +225,9 @@
             </ul>
           </div>
           <div class="mb-3 mt-3 pt-1">
-            <label class="text-dark mb-2">Fees</label>
+            <label class="text-dark mb-2">
+              <render-translation>Fees</render-translation>
+            </label>
             <vue-slider
               ref="slider"
               v-model="feesValue"
@@ -231,7 +237,7 @@
               :tooltip-formatter="formatter1"
             ></vue-slider>
           </div>
-          <div class="mt-auto">
+          <div class="translation-switch-container">
             <div class="form-check form-switch">
               <input
                 class="form-check-input"
@@ -252,6 +258,9 @@
                 >Arabic (العربية)</label
               >
             </div>
+          </div>
+          <div class="mt-auto">
+            
             <!-- <toggle-button @change="toggleTranslation"/> -->
             <!-- <toggle-button :value="false" color="#82C7EB" :sync="true" :labels="true"/> -->
             <!-- <vue-toggle-btn @isActive="toggleTranslation($event)"></vue-toggle-btn> -->
@@ -300,15 +309,18 @@
               >arrow_back</i
             >
             <span class="ms-2 text-base text-dark fw-semibold f-poppins"
-              >Advanced Search</span
+              >
+              <render-translation>Advanced Search</render-translation>
+            </span
             >
           </a>
         </div>
         <div class="px-3 py-4 main-sidebar-inner custom-scroll">
           <div class="mb-2">
             <label for="customRange2" class="text-dark mb-2"
-              >Teacher to Student Ratio</label
-            >
+              >
+              <render-translation>Teacher to Student Ratio</render-translation>
+            </label>
             <vue-slider
               ref="slider"
               v-model="studentValue"
@@ -327,11 +339,11 @@
               v-model="availabilitySearch"
             />
             <label class="form-check-label text-md">
-              Availability of Nursery/Preschool
+              <render-translation>Availability of Nursery/Preschool</render-translation>
             </label>
           </div>
           <p class="text-uppercase fw-semibold text-md my-3">
-            Recreational Facilities
+            <render-translation>Recreational Facilities</render-translation>
           </p>
           <div
             class="form-check mb-2"
@@ -345,11 +357,15 @@
               v-model="facilitiesValues"
             />
             <label class="form-check-label text-md">
-              {{ facility.name }}
+              <render-dynamic-translation
+                  :english="facility.name"
+                  :arabic="facility.name_ar"
+              />
+              <!-- {{ facility.name }} -->
             </label>
           </div>
           <p class="text-uppercase fw-semibold text-md my-3">
-            Facilities for SEND Students
+            <render-translation>Facilities for SEND Students</render-translation>
           </p>
           <div
             class="form-check mb-2"
@@ -363,7 +379,11 @@
               v-model="assistiveValues"
             />
             <label class="form-check-label text-md">
-              {{ assistiveEquipment.name }}
+              <render-dynamic-translation
+                  :english="assistiveEquipment.name"
+                  :arabic="assistiveEquipment.name_ar"
+              />
+              <!-- {{ assistiveEquipment.name }} -->
             </label>
             <!--                        <p class="text-sm text-grey-800 m-0">-->
             <!--                            Equipped with soothing items and sensory products such as sound machines, ball chairs, gel-->
@@ -381,8 +401,8 @@
           class="main-sidebar-logo-box py-2 px-3 border-bottom border-grey-100 d-flex align-items-center justify-content-between"
         >
           <span class="text-base text-dark fw-semibold f-poppins"
-            >Searching for schools...</span
-          >
+            ><render-translation>Searching for schools</render-translation>...
+          </span>
           <button
             class="border-0 bg-white text-dark text-lg material-icons p-0"
           >
@@ -442,7 +462,7 @@
               }
             "
           >
-            <render-translation>close</render-translation>
+            close
           </button>
         </div>
         <div class="px-3 py-4 main-sidebar-inner custom-scroll">
@@ -512,7 +532,8 @@
             <i class="material-icons text-dark d-inline">arrow_back</i>
             <span
               class="ms-2 text-base d-xl-block d-lg-none text-dark fw-semibold f-poppins"
-              >Back to results</span
+              >
+              <render-translation>Back to results</render-translation></span
             >
           </a>
         </div>
@@ -547,7 +568,7 @@
                 target="_blank"
                 class="text-info me-3 fw-medium text-sm d-flex align-items-center"
               >
-                Visit Website
+                <render-translation>Visit Website</render-translation>
                 <i class="material-icons ms-1 text-base">open_in_new</i>
               </a>
               <a
@@ -555,7 +576,7 @@
                 target="_blank"
                 class="text-info fw-medium text-sm d-flex align-items-center"
               >
-                Get Directions
+                <render-translation>Get Directions</render-translation>
                 <i class="material-icons ms-1 text-base">open_in_new</i>
               </a>
             </div>
@@ -690,7 +711,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    CITY
+                    <render-translation>CITY</render-translation>
                   </p>
                   <p class="text-sm lh-sm mb-4">
                     <render-dynamic-translation 
@@ -769,7 +790,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>PISA - Average Reading Literacy Score 2018</render-translation>
+                    <render-translation>PISA - Average Reading Literacy Score</render-translation> <render-translation :numeric="true">2018</render-translation>
                   </p>
                   <p class="text-sm lh-sm mb-4">
                     <render-translation :numeric="true">{{ schoolDetail.reading_score }}</render-translation>
@@ -778,7 +799,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>PISA- Average Mathematical Literacy Score 2018</render-translation>
+                    <render-translation>PISA- Average Mathematical Literacy Score</render-translation> <render-translation :numeric="true">2018</render-translation>
                   </p>
                   <p class="text-sm lh-sm mb-4">
                     <render-translation :numeric="true">{{ schoolDetail.mathematical_score }}</render-translation>
@@ -787,7 +808,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                  <render-translation>PISA - Average Scientific Literacy Score 2018</render-translation>
+                  <render-translation>PISA - Average Scientific Literacy Score</render-translation> <render-translation :numeric="true">2018</render-translation>
                   </p>
                   <p class="text-sm lh-sm mb-4">
                     <render-translation :numeric="true">{{ schoolDetail.scientific_score }}</render-translation>
@@ -843,7 +864,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Total Students Enrolled 2021/2022</render-translation>
+                    <render-translation>Total Students Enrolled</render-translation> <render-translation :numeric="true">2021/2022</render-translation>
                   </p>
                   <p class="text-sm lh-sm mb-4">
                     <render-translation :numeric="true">{{ schoolEnrollments.total }}</render-translation>
@@ -913,7 +934,8 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 1/Year 2</render-translation>
+                    <render-translation>Grade</render-translation> <render-translation :numeric="true">1</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">2</render-translation>
+                    <!-- <render-translation>Grade 1/Year 2</render-translation> -->
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -932,7 +954,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 2/Year 3</render-translation>
+                  <render-translation>Grade</render-translation> <render-translation :numeric="true">2</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">3</render-translation>
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -951,7 +973,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 3/Year 4</render-translation>
+                  <render-translation>Grade</render-translation> <render-translation :numeric="true">3</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">4</render-translation>
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -970,7 +992,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 4/Year 5</render-translation>
+                    <render-translation>Grade</render-translation> <render-translation :numeric="true">4</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">5</render-translation>
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -989,7 +1011,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 5/Year 6</render-translation>
+                    <render-translation>Grade</render-translation> <render-translation :numeric="true">5</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">6</render-translation>
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -1008,7 +1030,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 6/Year 7</render-translation>
+                    <render-translation>Grade</render-translation> <render-translation :numeric="true">6</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">7</render-translation>
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -1027,7 +1049,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 7/Year 8</render-translation>
+                    <render-translation>Grade</render-translation> <render-translation :numeric="true">7</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">8</render-translation>
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -1046,7 +1068,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 8/Year 9</render-translation>
+                    <render-translation>Grade</render-translation> <render-translation :numeric="true">8</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">9</render-translation>
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -1065,7 +1087,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 9/Year 10</render-translation>
+                    <render-translation>Grade</render-translation> <render-translation :numeric="true">9</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">10</render-translation>
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -1084,7 +1106,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 10/Year 11</render-translation>
+                    <render-translation>Grade</render-translation> <render-translation :numeric="true">10</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">11</render-translation>
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -1103,7 +1125,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 11/Year 12</render-translation>
+                    <render-translation>Grade</render-translation> <render-translation :numeric="true">11</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">12</render-translation>
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -1122,7 +1144,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 12/Year 13</render-translation>
+                    <render-translation>Grade</render-translation> <render-translation :numeric="true">12</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">13</render-translation>
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -1315,7 +1337,7 @@
                   </div>
                 </li>
               </ul>
-              <p class="fw-bold f-poppins my-3">Sports/Fitness Activities</p>
+              <p class="fw-bold f-poppins my-3"><render-translation>Sports/Fitness Activities</render-translation></p>
               <ul class="list-unstyled m-0 col-xl-10">
                 <li
                   class="d-flex mb-2 text-md align-items-center fw-medium pb-2 border-bottom border-grey-100"
@@ -1538,7 +1560,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 1/Year 2</render-translation>
+                  <render-translation>Grade</render-translation> <render-translation :numeric="true">1</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">2</render-translation>
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -1557,7 +1579,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 2/Year 3</render-translation>
+                  <render-translation>Grade</render-translation> <render-translation :numeric="true">2</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">3</render-translation>
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -1576,7 +1598,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 3/Year 4</render-translation>
+                  <render-translation>Grade</render-translation> <render-translation :numeric="true">3</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">4</render-translation>
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -1595,7 +1617,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 4/Year 5</render-translation>
+                  <render-translation>Grade</render-translation> <render-translation :numeric="true">4</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">5</render-translation>
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -1614,7 +1636,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 5/Year 6</render-translation>
+                  <render-translation>Grade</render-translation> <render-translation :numeric="true">5</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">6</render-translation>
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -1633,7 +1655,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 6/Year 7</render-translation>
+                  <render-translation>Grade</render-translation> <render-translation :numeric="true">6</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">7</render-translation>
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -1652,7 +1674,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 7/Year 8</render-translation>
+                  <render-translation>Grade</render-translation> <render-translation :numeric="true">7</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">8</render-translation>
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -1671,7 +1693,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 8/Year 9</render-translation>
+                  <render-translation>Grade</render-translation> <render-translation :numeric="true">8</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">9</render-translation>
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -1690,7 +1712,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 9/Year 10</render-translation>
+                  <render-translation>Grade</render-translation> <render-translation :numeric="true">9</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">10</render-translation>
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -1709,7 +1731,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 10/Year 11</render-translation>
+                  <render-translation>Grade</render-translation> <render-translation :numeric="true">10</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">11</render-translation>
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -1728,7 +1750,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 11/Year 12</render-translation>
+                  <render-translation>Grade</render-translation> <render-translation :numeric="true">11</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">12</render-translation>
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -1747,7 +1769,7 @@
                   <p
                     class="text-uppercase mb-1 fw-semibold text-grey-400 text-10"
                   >
-                    <render-translation>Grade 12/Year 13</render-translation>
+                  <render-translation>Grade</render-translation> <render-translation :numeric="true">12</render-translation>/<render-translation>Year</render-translation> <render-translation :numeric="true">13</render-translation>
                   </p>
                   <p
                     class="text-sm text-purple lh-sm mb-4"
@@ -2673,6 +2695,7 @@ export default {
       _self.isSchools = true;
     },
     toggleTranslation(e) {
+      this.isSchoolDetails = false;
       this.$store.commit("toggleTranslation");
     },
   },

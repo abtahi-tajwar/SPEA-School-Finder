@@ -18,3 +18,25 @@
 @import "admin/_dashboard";
 @import "admin/_tables";
 @import "admin/_tabs";
+
+.translation-switch-container {
+    position: fixed;
+    padding: 5px 15px;
+    border-radius: 50px;
+    right: 60px;
+    bottom: 23px;
+    background-color: white;
+    font-weight: bold;
+    box-shadow: 12px 17px 49px -20px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 12px 17px 49px -20px rgba(0,0,0,0.75);
+    -moz-box-shadow: 12px 17px 49px -20px rgba(0,0,0,0.75);
+
+    .form-switch input {
+        cursor: pointer;
+    }
+}
+.arabic-text {
+    // direction: rtl;
+    // unicode-bidi: bidi-override;
+    text-align: right;
+}

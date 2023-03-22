@@ -20,7 +20,7 @@
                         <i class="material-icons text-lg position-absolute">search</i>
                     </div>
                     <!--      <a href="#" class="text-info text-decoration-underline">Advanced Search</a>-->
-                    <p class="text-md text-uppercase mb-3 mt-3  fw-semibold"><render-translate>Private Schools Data</render-translate></p>
+                    <p class="text-md text-uppercase mb-3 mt-3  fw-semibold"><render-translation>Private Schools Data</render-translation></p>
                     <div class="dropdown custom-dropdown mb-3">
                         <button class="custom-input-sm  text-start w-100 dropdown-toggle" type="button"
                                 data-bs-toggle="dropdown" aria-expanded="false" @click="closeSchoolDetails()">
@@ -162,7 +162,7 @@
                                 :tooltip-formatter="formatter1">
                         </vue-slider>
                     </div>
-                    <div class=" mt-auto">
+                    <div class="translation-switch-container">
                         <div class="form-check form-switch">
                             <input
                                 class="form-check-input"
@@ -183,6 +183,9 @@
                                 >Arabic (العربية)</label
                             >
                         </div>
+                    </div>
+                    <div class=" mt-auto">
+                        
                         <button class="btn btn-primary w-100" @click="getSchools()">
                             <render-translation>Find Schools</render-translation>
                         </button>
@@ -204,13 +207,15 @@
                     <a href="#" class="d-flex align-items-center">
                         <i class="material-icons text-dark d-inline" @click="isAdvanceSearch=false">arrow_back</i>
                         <span class="ms-2 text-base text-dark fw-semibold f-poppins">
-                            <render-translate>Advanced Search</render-translate>
+                            <render-translation>Advanced Search</render-translation>
                         </span>
                     </a>
                 </div>
                 <div class="px-3 py-4 main-sidebar-inner custom-scroll">
                     <div class="mb-2">
-                        <label class="text-dark mb-2">Teacher to Student Ratio</label>
+                        <label class="text-dark mb-2">
+                            <render-translation>Teacher to Student Ratio</render-translation>
+                        </label>
                         <vue-slider
                                 ref="slider"
                                 v-model.lazy="studentValue"
@@ -225,10 +230,12 @@
                         <input class="form-check-input" type="checkbox" value=""
                                v-model="availabilitySearch">
                         <label class="form-check-label text-md">
-                            <render-translate>Availability of Nursery/Preschool</render-translate>
+                            <render-translation>Availability of Nursery/Preschool</render-translation>
                         </label>
                     </div>
-                    <p class="text-uppercase fw-semibold text-md my-3">Recreational Facilities</p>
+                    <p class="text-uppercase fw-semibold text-md my-3">
+                        <render-translation>Recreational Facilities</render-translation>
+                    </p>
                     <div class="form-check mb-2" v-for="facility in recreationalFacilities" :key="facility.id">
                         <input class="form-check-input" type="checkbox" :value="facility.id"
                                v-model="facilitiesValues">
@@ -240,7 +247,9 @@
                             <!-- {{facility.name}} -->
                         </label>
                     </div>
-                    <p class="text-uppercase fw-semibold text-md  my-3">Facilities for SEND Students</p>
+                    <p class="text-uppercase fw-semibold text-md  my-3">
+                        <render-translation>Facilities for SEND Students</render-translation>
+                    </p>
                     <div class="form-check mb-2" v-for="assistiveEquipment in assistiveEquipments"
                          :key="assistiveEquipment.id">
                         <input class="form-check-input" type="checkbox" :value="assistiveEquipment.id"
@@ -263,7 +272,7 @@
                         <render-translation>Searching for schools</render-translation>...
                     </span>
                     <button class="border-0 bg-white text-dark text-lg material-icons p-0">
-                        <render-translation>close</render-translation>
+                        close
                     </button>
                 </div>
                 <div class="px-3 py-4 main-sidebar-inner custom-scroll">
@@ -285,7 +294,7 @@
                     </span>
                     <button class="border-0 bg-white text-dark text-lg material-icons p-0"
                             @click="isSchools=false">
-                        <render-translation>close</render-translation>
+                        close
                     </button>
                 </div>
                 <div class="px-3 py-4 main-sidebar-inner custom-scroll">
@@ -452,7 +461,7 @@
                             <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
                                     data-bs-target="#contact-tab-pane" type="button"
                                     role="tab" aria-controls="contact-tab-pane" aria-selected="false">
-                                <render-translation>Facilities &Services</render-translation>
+                                <render-translation>Facilities & Services</render-translation>
                             </button>
                         </li>
                         <li class="nav-item" role="presentation">
@@ -534,17 +543,21 @@
                                     <p class="text-sm lh-sm mb-4" v-if="schoolDetail.international_affiliated">
                                         <render-translation>YES</render-translation>
                                     </p>
-                                    <p class="text-uppercase mb-1 fw-semibold text-grey-400 text-10">Total Teachers</p>
+                                    <p class="text-uppercase mb-1 fw-semibold text-grey-400 text-10">
+                                        <render-translation>Total Teachers</render-translation>
+                                    </p>
                                     <p class="text-sm lh-sm mb-4">
                                         <render-translation :numeric="true">{{schoolDetail.school_staff.total}}</render-translation>
                                     </p>
-                                    <p class="text-uppercase mb-1 fw-semibold text-grey-400 text-10">Number Of Senior
-                                        <render-translation>Administrators</render-translation>
+                                    <p class="text-uppercase mb-1 fw-semibold text-grey-400 text-10">
+                                        <render-translation>Number Of Senior Administrators</render-translation>
                                     </p>
                                     <p class="text-sm lh-sm mb-4">
                                         <render-translation :numeric="true">{{schoolDetail.school_staff.total_admin}}</render-translation>
                                     </p>
-                                    <p class="text-uppercase mb-1 fw-semibold text-grey-400 text-10">Land Size (SQM)</p>
+                                    <p class="text-uppercase mb-1 fw-semibold text-grey-400 text-10">
+                                        <render-translation>Land Size (SQM)</render-translation>
+                                    </p>
                                     <p class="text-sm lh-sm mb-4">
                                         <render-translation :numeric="true">{{schoolDetail.area}}</render-translation>
                                     </p>
@@ -2231,6 +2244,7 @@
                 this.isShowInfoWindow = true;
             },
             toggleTranslation(e) {
+                this.isSchoolDetails = false;
                 this.$store.commit("toggleTranslation");
             }
         }
